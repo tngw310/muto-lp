@@ -6,7 +6,7 @@ export default function VideoSection() {
           1分で分かる武藤雄大
         </h2>
         <p className="text-center text-[var(--muted)] mb-10">
-          自己紹介動画をご覧ください
+          NHK記者から政治家へ。なぜ政治を志すのか、1分でお伝えします。
         </p>
 
         <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
@@ -35,7 +35,7 @@ export default function VideoSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center text-[var(--primary)] hover:text-[var(--primary-light)] font-medium"
           >
-            YouTubeチャンネルで他の動画を見る
+            その他の動画はこちら
             <svg
               className="w-4 h-4 ml-1"
               fill="none"

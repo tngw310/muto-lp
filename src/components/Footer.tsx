@@ -2,6 +2,7 @@ const navItems = [
   { href: "#policy", label: "政策" },
   { href: "#profile", label: "プロフィール" },
   { href: "#support", label: "応援する" },
+  { href: "#", label: "お問い合わせ" },
 ];
 
 const socialLinks = [
@@ -55,7 +56,7 @@ export default function Footer() {
             <nav className="space-y-2">
               {navItems.map((item) => (
                 <a
-                  key={item.href}
+                  key={item.href + item.label}
                   href={item.href}
                   className="block text-gray-300 hover:text-white transition-colors"
                 >
@@ -70,11 +71,18 @@ export default function Footer() {
               後援会事務所
             </h4>
             <address className="text-gray-400 text-sm not-italic leading-relaxed">
+              武藤雄大後援会事務所
+              <br />
               〒XXX-XXXX
               <br />
               千葉県松戸市○○○○
               <br />
-              TEL: XXX-XXXX-XXXX
+              <a
+                href="mailto:info@muto-yudai.jp"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                info@muto-yudai.jp
+              </a>
             </address>
           </div>
         </div>
