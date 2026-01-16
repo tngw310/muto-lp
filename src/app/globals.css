@@ -3,11 +3,18 @@
 :root {
   --background: #fafafa;
   --foreground: #1a1a1a;
-  --primary: #1e3a5f;
-  --primary-light: #2d5a8b;
-  --accent: #d4a574;
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+  --accent: #06b6d4;
   --muted: #6b7280;
   --border: #e5e7eb;
+
+  /* Gradient colors */
+  --gradient-start: #2563eb;
+  --gradient-mid: #7c3aed;
+  --gradient-end: #06b6d4;
 }
 
 @theme inline {
@@ -15,6 +22,8 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -35,6 +44,61 @@ body {
 ::selection {
   background: var(--primary);
   color: white;
+}
+
+/* Gradient utilities */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+}
+
+.gradient-bg-full {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+}
+
+.gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  border-radius: calc(1rem + 2px);
+  z-index: -1;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animated {
+  background: linear-gradient(270deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-start));
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.3), 0 0 80px rgba(124, 58, 237, 0.2);
 }
 
 @keyframes fade-in-up {
@@ -62,4 +126,18 @@ body {
 
 .animate-delay-300 {
   animation-delay: 0.3s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

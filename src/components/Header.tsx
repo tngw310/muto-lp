@@ -60,9 +60,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a
             href="#"
-            className={`text-lg sm:text-xl font-bold tracking-wide transition-colors ${
-              isScrolled ? "text-[var(--primary)]" : "text-[var(--primary)]"
-            }`}
+            className="text-lg sm:text-xl font-bold tracking-wide gradient-text"
           >
             武藤雄大
           </a>
@@ -98,7 +96,7 @@ export default function Header() {
             </div>
             <a
               href="#support"
-              className="ml-2 px-5 py-2 bg-[var(--primary)] text-white text-sm font-medium rounded-full hover:bg-[var(--primary-light)] transition-colors"
+              className="ml-2 px-5 py-2 gradient-bg text-white text-sm font-medium rounded-full hover:opacity-90 transition-opacity"
             >
               応援する
             </a>

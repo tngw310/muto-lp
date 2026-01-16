@@ -1,7 +1,12 @@
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white -z-10" />
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -11,7 +16,7 @@ export default function HeroSection() {
             </p>
 
             <h1 className="animate-fade-in-up animate-delay-100">
-              <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--primary)] tracking-tight">
+              <span className="text-4xl sm:text-5xl lg:text-6xl font-bold gradient-text tracking-tight">
                 武藤雄大
               </span>
               <span className="block text-sm text-[var(--muted)] mt-2 font-normal tracking-widest">
@@ -30,7 +35,7 @@ export default function HeroSection() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up animate-delay-300">
               <a
                 href="#video"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary)] text-white font-medium rounded-full hover:bg-[var(--primary-light)] transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 gradient-bg text-white font-medium rounded-full hover:opacity-90 transition-opacity glow"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -43,7 +48,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="#policy"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[var(--primary)] text-[var(--primary)] font-medium rounded-full hover:bg-[var(--primary)] hover:text-white transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-[var(--primary)] text-[var(--primary)] font-medium rounded-full hover:bg-white transition-colors"
               >
                 政策を見る
               </a>
@@ -52,10 +57,15 @@ export default function HeroSection() {
 
           <div className="order-1 md:order-2 flex justify-center animate-fade-in-up">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-[var(--primary)]/10 rounded-full" />
-              <div className="absolute inset-4 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
+              {/* Gradient ring */}
+              <div className="absolute inset-0 gradient-bg-full rounded-full opacity-20 animate-float" />
+              <div className="absolute inset-2 gradient-bg-full rounded-full opacity-30" />
+              <div className="absolute inset-4 bg-white rounded-full shadow-xl overflow-hidden flex items-center justify-center">
                 <span className="text-[var(--muted)] text-sm">写真</span>
               </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full animate-float" style={{ animationDelay: '1s' }} />
             </div>
           </div>
         </div>
@@ -64,7 +74,7 @@ export default function HeroSection() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <a href="#video" aria-label="下へスクロール">
           <svg
-            className="w-6 h-6 text-[var(--muted)]"
+            className="w-6 h-6 text-[var(--primary)]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
